@@ -1,0 +1,76 @@
+---
+title: "Day 3- Conditionals and Loops"
+format: html
+editor: visual
+execute: 
+  warning: false
+  messages: false
+---
+
+```{r}
+library(stringr)
+library(dplyr)
+```
+
+basic if statement
+
+```{r}
+burrito <- 1 
+
+if (burrito > 2) { 
+  print("I love burritos!")
+  }
+```
+
+string detect and if statement
+
+```{r}
+my_ships <- c("boat","lady","tiny horn")
+
+str_detect(my_ships, pattern = "r") # is there an r in ship names 
+
+phrase <- "I love burritos"
+
+# We can use any conditional function in the if statement that will return true or false 
+if (str_detect(phrase, "love")) { 
+  print("I am a burrito fan")
+  }
+```
+
+filtering
+
+```{r}
+tatooine_characters <- starwars |>
+  filter(homeworld == "Tatooine")
+
+tatooine_endor_naboo <- starwars |> 
+  filter(homeworld %in% c("Tatooine","Naboo","Endor")) 
+# does the value in the homeworld variable for that row exist in that vector c("Tatooine","Naboo","Endor") ^^^^^^^^^^ in operator .... 
+
+
+```
+
+if else statement
+
+```{r}
+pika <- 89.1 
+if (pika > 60){ 
+  print("mega pika")
+} else {
+  print("normal pika")
+}
+```
+
+if elseif else
+
+```{r}
+marmot <- 2.8 
+
+if(marmot < 0.5){
+  print("this is a small marmot")
+} else if(marmot >= 0.5 & marmot < 3){
+  print("this is a medium marmot")
+} else {
+  print("this is a large marmot")
+}
+```
